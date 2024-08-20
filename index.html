@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polly Agency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        #welcomeText {
+            font-size: 36px;
+            border-right: 2px solid white;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 4s steps(40, end) infinite, blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 id="welcomeText">Polly juice agency </h1>
+</header>
+<section id="products">
+    <h2 onclick="toggleProducts()">Our Products</h2>
+    <div id="productImages" style="display:none;">
+        <img src="/images/a.jpg" alt="Product 1">
+        <img src="/images/B.jpg" alt="Product 2">
+        <img src="/images/3.jpg" alt="Product 3">
+        <img src="/images/2.jpg" alt="Product 4">
+        <img src="/images/4.jpg" alt="Product 5">
+        
+    </div>
+</section>
+
+<script>
+    function toggleProducts() {
+        var images = document.getElementById('productImages');
+        if (images.style.display === 'none') {
+            images.style.display = 'block';
+        } else {
+            images.style.display = 'none';
+        }
+    }
+</script>
+
+<style>
+    #products {
+        background: url('background.jpg') no-repeat center center;
+        background-size: cover;
+        padding: 50px;
+        text-align: center;
+        color: white;
+    }
+    #products h2 {
+        cursor: pointer;
+        font-size: 28px;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    #productImages {
+        margin-top: 20px;
+        display: none;
+        animation: slideDown 1s forwards;
+    }
+    #productImages img {
+        margin: 15px;
+        width: 200px;
+        height: auto;
+        border: 2px solid white;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+    #productImages img:hover {
+        transform: scale(1.1);
+    }
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+<style>
+    #contact {
+        background-color: #444;
+        color: white;
+        padding: 50px;
+        text-align: center;
+    }
+    #contact h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    form {
+        display: inline-block;
+        text-align: left;
+        background-color: #555;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="submit"] {
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+</style>
+</body>
+</html>
